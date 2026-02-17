@@ -25,6 +25,40 @@ card()
 // title
 // : 
 // "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+
+const detailsHandler = (id) => {
+  
+    fetch(`https://fakestoreapi.com/products/${id}`)
+        .then(res => res.json())
+        .then(data => loadDitals(data));
+};
+const loadDitals = (load) =>{
+  console.log(load)
+  const addLoad = document.getElementById('load-continer')
+  addLoad.innerHTML = '';
+
+  addLoad.innerHTML = `
+    <div class="card bg-base-100 w-96 shadow-sm ">
+  <figure class="px-10 pt-10">
+    <img
+      src="${load.image}"
+      class="rounded-xl" />
+  </figure>
+  <div class="card-body items-center text-center">
+    <h2 class="card-title">${load.category}</h2>
+    <h2 class="card-title">${load.description}</h2>
+    <h2 class="card-title">${load.price}</h2>
+    <h2 class="card-title">${load.rating}</h2>
+    <h2 class="card-title">${load.title}</h2>
+
+    
+  </div>
+</div>
+  `;
+
+  
+}
+
 const addCard = (props) =>{
     console.log(props)
    const continer = document.getElementById('tocard')
@@ -52,7 +86,7 @@ const addCard = (props) =>{
   <h1>${item.title}</h1>
   <h1 className="text-bold">$${item.price}</h1>
     <div class="flex justify-between w-full ">
-  <button class="btn  btn-md rounded-lg flex items-center gap-2 
+  <button onclick="detailsHandler(${item.id})" class="btn  btn-md rounded-lg flex items-center gap-2 
                hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-300">
     <i class="fa-solid fa-eye"></i>
     Details
@@ -60,7 +94,7 @@ const addCard = (props) =>{
   <button class="btn  btn-md rounded-lg flex items-center gap-2 
                hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-300">
     <i class="fa-solid fa-cart-shopping"></i>
-    Details
+    Add
   </button>
 </div>
 
