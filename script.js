@@ -47,7 +47,7 @@ const loadDitals = (load) =>{
   <div class="card-body items-center text-center">
     <h2 class="card-title">${load.category}</h2>
     <h2 class="card-title">${load.description}</h2>
-    <h2 class="card-title">${load.price}</h2>
+    <h2 class="card-title">$${load.price}</h2>
     <h2 class="card-title">${load.rating}</h2>
     <h2 class="card-title">${load.title}</h2>
 
