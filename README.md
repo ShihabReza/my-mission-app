@@ -1,9 +1,9 @@
 
 1.QS: What is the difference between null and undefined?
 Ans: undefined:
-         Means a variable has been declared but has not been assigned a value.It’s also the default return value of a function that doesn’t return anything.
+ Means a variable has been declared but has not been assigned a value.It’s also the default return value of a function that doesn’t return anything.
 
-    null:Represents the intentional absence of any value.It’s a value you can assign to a variable to indicate “no value” or “empty.”
+null:Represents the intentional absence of any value.It’s a value you can assign to a variable to indicate “no value” or “empty.”
 
 2.QS: What is the use of the map() function in JavaScript? How is it different from forEach()?
 Ans:Transform an array into a new array by applying a function to each element.A new array of the same length.the original array
